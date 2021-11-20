@@ -1,0 +1,95 @@
+.button {
+  border: none;
+  color: #ffffff;
+  background-color: #06ffc9;
+  font-size: 24px;
+  padding: 12px 26px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+}
+
+.button:hover {
+  background-color: #04d1a5;
+  color: white;
+}
+
+.button:active {
+  background-color: #02b890;
+  box-shadow: 0 2px #666;
+}
+
+/* HEADER */
+
+.header {
+  background-color: #f38686;
+  padding: 10px;
+}
+
+.icon {
+  font-size: 30px;
+}
+
+.title {
+  color: #000000;
+  font-family: "Pacifico", cursive;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 10px;
+  text-align: center;
+}
+
+/* BODY */
+.subtitle {
+  color: #000000;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* FOOTER */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.fa-github {
+  color: #000000;
+  font-size: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+  transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+}
+
+/* MODALS */
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  background-color: #faf5ab;
+  text-align: center;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
