@@ -1,36 +1,45 @@
-.button {
+/* BUTTON */
+
+.button, #addBook {
   border: none;
   color: #ffffff;
   background-color: #06ffc9;
-  font-size: 24px;
+  font-size: 20px;
   padding: 12px 26px;
-  border-radius: 50px;
+  border-radius: 20px;
   transition-duration: 0.3s;
+  margin: 5px;
+  border: 2px solid #ffffff;
 }
 
-.button:hover {
+#addBook {
+  font-size: 30px;
+}
+
+.button:hover, #addBook:hover {
   background-color: #04d1a5;
   color: white;
 }
 
-.button:active {
+.button:active, #addBook:active {
   background-color: #02b890;
   box-shadow: 0 2px #666;
+}
+
+body {
+  background-color: #c5b2b2;
 }
 
 /* HEADER */
 
 .header {
   background-color: #f38686;
-  padding: 10px;
-}
-
-.icon {
-  font-size: 30px;
+  padding: 15px;
+  border-radius: 15px;
 }
 
 .title {
-  color: #000000;
+  color: #ffffff;
   font-family: "Pacifico", cursive;
   font-size: 20px;
   line-height: 1;
@@ -38,25 +47,59 @@
   text-align: center;
 }
 
+.icon {
+  font-size: 30px;
+}
+
 /* BODY */
 .subtitle {
-  color: #000000;
-  font-family: "Oswald", sans-serif;
-  font-size: 16px;
+  color: #00472B;
+  font-size: 22px;
+  padding: 10px;
   line-height: 1;
+}
+
+.main {
+  min-height: 410px;
+  margin: 0 0 0 275px;
+  padding: 35px 40px 30px 0;
+  color: #00472B;
+  font-family: cursive;
+  font-size: 16px;
+  line-height: 18px;
+  text-emphasis: justify;
+}
+
+aside {
+  float: left;
+  width: 120px;
+  padding: 50px 0 0 70px;
+}
+
+.card {
+  display: flex;
+  background-color: beige;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10px 10px 10px 10px;
+  max-width: 1400px;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 900;
+  font-family: FontAwesome, cursive; 
 }
 
 /* FOOTER */
 
 .footer {
-  position: absolute;
-  bottom: 0;
+  /* position: absolute; */
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 5px;
   width: 100%;
-  padding: 10px;
+  padding: 5px;
   font-size: 20px;
 }
 
@@ -82,10 +125,11 @@
   left: 50%;
   width: 400px;
   padding: 40px;
-  border: 2px solid #000000;
+  border: 4px solid #000000;
   border-radius: 10px;
-  background-color: #faf5ab;
+  background-color: #fae1ab;
   text-align: center;
+  font-family: "Pacifico", cursive;
   transform: translate(-50%, -50%) scale(0);
   transition: 200ms ease-in-out;
 }
