@@ -5,6 +5,7 @@
   color: #ffffff;
   background-color: #06ffc9;
   font-size: 20px;
+  font-family: cursive;
   padding: 12px 26px;
   border-radius: 20px;
   transition-duration: 0.3s;
@@ -13,7 +14,7 @@
 }
 
 #addBook {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .button:hover, #addBook:hover {
@@ -60,9 +61,9 @@ body {
 }
 
 .main {
-  min-height: 410px;
+  min-height: 445px;
   margin: 0 0 0 275px;
-  padding: 35px 40px 30px 0;
+  padding: 0px 40px 30px 0;
   color: #00472B;
   font-family: cursive;
   font-size: 16px;
@@ -79,15 +80,28 @@ aside {
 .card {
   display: flex;
   background-color: beige;
+  box-shadow: #00000075 5px 5px 5px;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 10px 10px 10px 10px;
   max-width: 1400px;
-  padding: 10px;
+  padding: 10px 10px 10px 20px;
   border-radius: 20px;
   font-size: 20px;
   font-weight: 900;
-  font-family: FontAwesome, cursive; 
+  font-family: FontAwesome, cursive;
+}
+
+.input {
+  border-radius: 10px;
+  border: 2px solid #000000;
+}
+
+input[type="radio" i] {
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
 }
 
 /* FOOTER */
@@ -106,7 +120,7 @@ aside {
 .fa-github {
   color: #000000;
   font-size: 24px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .fa-github:hover {
@@ -136,4 +150,8 @@ aside {
 
 .modal.active {
   transform: translate(-50%, -50%) scale(1);
+}
+
+#update {
+  transform: scale(0);
 }
