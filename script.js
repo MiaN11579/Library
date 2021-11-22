@@ -10,8 +10,10 @@ class Book {
     }
 }
 
-function addBookToLibrary(title, author, page, finish) {
-    myLibrary.push(new Book(title, author, page, finish))
+// User interface
+
+function addBookToLibrary(newBook) {
+    myLibrary.push(newBook)
     saveLibrary()
 }
 
@@ -131,29 +133,59 @@ function activeModal() {
 
 function closeModalRefresh() {
     showBooks()
+    document.getElementById('add').innerText = "Add"
     document.getElementById("addBookForm").reset();
     document.getElementById("addBookModal").classList.remove("active")
+    errorMsg.classList.remove('active')
 }
 
-function addBookAndCloseModal(currentIndex) {
+function getBookFromInput() {
     let title = document.getElementById('book-title').value
     let author = document.getElementById('book-author').value
     let pages = document.getElementById('book-pages').value
-    let isFinishedAnswer = document.querySelector('input[name="answer"]:checked').value;
-    if (isFinishedAnswer == "0") {
-        var isFinished = false
-    } else { var isFinished = true }
+    let isFinished = document.getElementById('yes').checked
+    return new Book(title, author, pages, isFinished)
+}
 
-    if (document.getElementById('add').innerText == "Add") {
-        addBookToLibrary(title, author, pages, isFinished)
-    } else {
-        myLibrary[currentIndex].title = document.getElementById('book-title').value 
-        myLibrary[currentIndex].author = document.getElementById('book-author').value 
-        myLibrary[currentIndex].page = document.getElementById('book-pages').value 
-        showBooks()
-        document.getElementById('add').innerText = "Add"
+function checkError(newBook) {
+    if (newBook.title == '' || newBook.author == '' || newBook.page == '') {
+        errorMsg.innerText = "Please fill all the fields"
+        errorMsg.classList.add('active')
+        return false
     }
-    closeModalRefresh()
+    for (book of myLibrary) {
+        if (book.title == newBook.title && book.author == newBook.author) {
+            errorMsg.innerText = "Book already exists"
+            errorMsg.classList.add('active')
+            return false
+        }
+    }
+    return true
+}
+
+function addBook(currentIndex) {
+    if (document.getElementById('add').innerText == "Add") {
+        newBook = getBookFromInput()
+        if (checkError(newBook)) {
+            addBookToLibrary(newBook)
+            closeModalRefresh()
+        }
+    } else {
+        updateBook(currentIndex)
+    }
+}
+
+function updateBook(index) {
+    newBook = getBookFromInput()
+    if (checkError(newBook)) {
+        myLibrary[index].title = document.getElementById('book-title').value
+        myLibrary[index].author = document.getElementById('book-author').value
+        myLibrary[index].page = document.getElementById('book-pages').value
+        myLibrary[index].finish = document.getElementById('yes').checked
+        document.getElementById('add').innerText = "Add"
+        closeModalRefresh()
+    }
+
 }
 
 function updateBookStatus(index) {
@@ -163,7 +195,6 @@ function updateBookStatus(index) {
 
 function deleteBook(index) {
     myLibrary.splice(index, 1);
-    saveLibrary()
     showBooks()
 }
 
@@ -171,11 +202,8 @@ function editBook(index) {
     document.getElementById('book-title').value = myLibrary[index].title
     document.getElementById('book-author').value = myLibrary[index].author
     document.getElementById('book-pages').value = myLibrary[index].page
-    if (myLibrary[index].finish) {
-        document.querySelector('input[name="answer"]:checked').value = "1"
-    } else {
-        document.querySelector('input[name="answer"]:checked').value = "0"
-    }
+    document.getElementById('yes').checked = myLibrary[index].finish
+    document.getElementById('no').checked = !myLibrary[index].finish
     document.getElementById("add").innerText = "Update"
     currentIndex = index
     activeModal();

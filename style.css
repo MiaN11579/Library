@@ -155,3 +155,15 @@ input[type="radio" i] {
 #update {
   transform: scale(0);
 }
+
+.error-msg {
+  display: none;
+  color: red;
+  font-family: Georgia;
+  font-size: 18px;
+  text-align: center;
+}
+
+.error-msg.active {
+  display: block;
+}

@@ -43,7 +43,7 @@
                 <p class="modal-card-title">Add a new book!</p>
             </header>
             <section class="modal-card-body">
-                <form id="addBookForm" onsubmit="addBookAndCloseModal(currentIndex)">
+                <form id="addBookForm">
                     <div class="field">
                         <label class="label">Title :</label>
                         <div class="control">
@@ -66,20 +66,23 @@
                         <label class="label">Have you finished reading?</label>
                         <div class="control">
                             <label class="radio">
-                                <input type="radio" name="answer" value="1">
+                                <input type="radio" id="yes" name="answer" value="1">
                                 Yes
                             </label>
                             <label class="radio">
-                                <input type="radio" name="answer" value="0" checked>
+                                <input type="radio" id="no" name="answer" value="0" checked>
                                 No
                             </label>
                         </div>
                     </div>
-                    <footer class="modal-button">
-                        <button class="button" type="submit" id="add" ">Add</button>
-                        <button class="button" onclick="closeModalRefresh()">Cancel</button>
-                    </footer>
+                    <div>
+                        <p class="error-msg" id="errorMsg">Book already exists</p>
+                    </div>
                 </form>
+                <footer class="modal-button">
+                    <button class="button" id="add" onclick="addBook(currentIndex)">Add</button>
+                    <button class=" button" onclick="closeModalRefresh()">Cancel</button>
+                </footer>
             </section>
         </div>
     </div>
