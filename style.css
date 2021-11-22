@@ -61,7 +61,7 @@ body {
 }
 
 .main {
-  min-height: 445px;
+  min-height: 100vh;
   margin: 0 0 0 275px;
   padding: 0px 40px 30px 0;
   color: #00472B;

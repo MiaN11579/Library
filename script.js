@@ -18,8 +18,8 @@ function addBookToLibrary(newBook) {
 }
 
 function createBookCard(book, index) {
-    let title = document.createElement("h3")
-    title.innerText = book.title
+    let title = document.createElement("h2")
+    title.innerText = "Title: " + book.title
 
     let author = document.createElement("p")
     author.innerText = "Author  : " + book.author
@@ -153,7 +153,15 @@ function checkError(newBook) {
         errorMsg.classList.add('active')
         return false
     }
+    if (newBook.page < 0) {
+        errorMsg.innerText = "Page number can't be negative"
+        errorMsg.classList.add('active')
+        return false
+    }
     for (book of myLibrary) {
+        if (document.getElementById('add').innerText == "Update" && myLibrary.indexOf(book) == currentIndex) {
+            continue
+        }
         if (book.title == newBook.title && book.author == newBook.author) {
             errorMsg.innerText = "Book already exists"
             errorMsg.classList.add('active')
