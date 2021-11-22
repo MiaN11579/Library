@@ -54,21 +54,22 @@ body {
 
 /* BODY */
 .subtitle {
-  color: #00472B;
+  color: #000000;
   font-size: 22px;
   padding: 10px;
   line-height: 1;
 }
 
 .main {
-  min-height: 100vh;
   margin: 0 0 0 275px;
   padding: 0px 40px 30px 0;
-  color: #00472B;
+  color: #000000;
   font-family: cursive;
   font-size: 16px;
   line-height: 18px;
-  text-emphasis: justify;
+  word-wrap: break-word;
+  /* footer support */
+  margin-bottom: 100px;
 }
 
 aside {
@@ -107,7 +108,8 @@ input[type="radio" i] {
 /* FOOTER */
 
 .footer {
-  /* position: absolute; */
+  position: absolute;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -115,6 +117,12 @@ input[type="radio" i] {
   width: 100%;
   padding: 5px;
   font-size: 20px;
+}
+
+html {
+  /* footer support */
+  position: relative;
+  min-height: 100%;
 }
 
 .fa-github {
@@ -155,6 +163,8 @@ input[type="radio" i] {
 #update {
   transform: scale(0);
 }
+
+/* ERROR MESSAGE */
 
 .error-msg {
   display: none;
