@@ -190,7 +190,6 @@ function updateBook(index) {
         myLibrary[index].author = document.getElementById('book-author').value
         myLibrary[index].page = document.getElementById('book-pages').value
         myLibrary[index].finish = document.getElementById('yes').checked
-        document.getElementById('add').innerText = "Add"
         closeModalRefresh()
     }
 
