@@ -5,7 +5,7 @@
   color: #ffffff;
   background-color: #7d98a1;
   font-size: 20px;
-  font-family: cursive;
+  font-family: Comic Sans MS;
   padding: 12px 26px;
   border-radius: 20px;
   transition-duration: 0.3s;
@@ -65,7 +65,7 @@ body {
   min-height: 100vh;
   padding: 0px 70px 30px 0;
   color: #ffffff;
-  font-family: cursive;
+  font-family: Comic Sans MS;
   font-size: 16px;
   line-height: 18px;
   word-wrap: break-word;
@@ -75,7 +75,7 @@ body {
 
 aside {
   float: left;
-  width: 120px;
+  width: 5%;
   padding: 50px 70px 0 70px;
 }
 
@@ -90,7 +90,7 @@ aside {
   border-radius: 20px;
   font-size: 20px;
   font-weight: 900;
-  font-family: FontAwesome, cursive;
+  font-family: FontAwesome, Comic Sans MS;
 }
 
 .input {
@@ -161,6 +161,8 @@ html {
   transform: scale(0);
 }
 
+
+
 /* ERROR MESSAGE */
 
 .error-msg {
@@ -173,4 +175,17 @@ html {
 
 .error-msg.active {
   display: block;
+}
+
+/* MEDIA QUERIES FOR MOBILE RESIZE */
+@media screen and (max-width: 800px) {
+  .modal, .modal.active, .input {
+    width: 50%;
+    height: 50%;
+    font-size: 50%;
+  }
+  aside, .card {
+    width: 100%;
+    margin: 10px 0 10px 0;
+  }
 }
