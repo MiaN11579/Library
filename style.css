@@ -1,6 +1,7 @@
 /* BUTTON */
 
-.button, #addBook {
+.button,
+#addBook {
   border: none;
   color: #ffffff;
   background-color: #7d98a1;
@@ -11,23 +12,27 @@
   transition-duration: 0.3s;
   margin: 5px;
   border: 2px solid #ffffff;
-  
 }
 
 #addBook {
   font-size: 25px;
 }
 
-.button:hover, #addBook:hover {
+.button:hover,
+#addBook:hover {
   background-color: #67848e;
 }
 
-.button:active, #addBook:active {
-  background-color: #566E76;
+.button:active,
+#addBook:active {
+  background-color: #566e76;
   box-shadow: 0 2px #666;
 }
 
 body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
   background-color: #a9b4c2;
 }
 
@@ -142,7 +147,7 @@ html {
   z-index: 1;
   top: 50%;
   left: 50%;
-  width: 400px;
+  width: 350px;
   padding: 40px;
   background-color: #eef1ef;
   border: 4px solid #000000;
@@ -161,8 +166,6 @@ html {
   transform: scale(0);
 }
 
-
-
 /* ERROR MESSAGE */
 
 .error-msg {
@@ -179,13 +182,19 @@ html {
 
 /* MEDIA QUERIES FOR MOBILE RESIZE */
 @media screen and (max-width: 800px) {
-  .modal, .modal.active, .input {
+  .modal,
+  .modal.active,
+  .input {
     width: 50%;
     height: 50%;
-    font-size: 50%;
   }
-  aside, .card {
+
+  .card {
     width: 100%;
-    margin: 10px 0 10px 0;
+    margin: 10px 0 10px 10px;
+  }
+  aside {
+    width: 100%;
+    padding: 0;
   }
 }
